@@ -16,7 +16,7 @@ contract Handling {
         return _numerator / _denominator;
     }
 
-    function multiply(uint _a) public view returns (uint) {
+    function multiply(uint _a) public pure returns (uint) {
         require(_a > 0, "Value of '_a' must be greater than zero to avoid a zero result");
         return _a * factor;
     }
