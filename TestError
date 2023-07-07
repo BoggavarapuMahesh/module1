@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+contract TestError{
+    uint public drivingTestTrial;
+
+
+    function minor(uint _age) public pure returns(uint){
+        if(_age>18){
+            revert("Person is already an adult");
+        }
+        return (18 - _age);
+    }
+    function drive(uint _age) public pure returns(string memory){
+        require(_age>=18,"You are not eligible to drive");
+        string memory ans = "Have fun driving";
+        return ans;
+
+    }
+
+    function trial(uint attempts) public {
+        drivingTestTrial = attempts;
+        assert(drivingTestTrial>0);
+    }
+}
